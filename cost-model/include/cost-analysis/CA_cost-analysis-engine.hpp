@@ -24,9 +24,13 @@ Author : Hyoukjun Kwon (hyoukjun@gatech.edu)
 
 // #define DEBUG_COST_ANALYSIS
 
+#include <cassert>
 #include <cmath>
+#include <fstream>
 #include <iostream>
 #include <memory>
+
+#include "API_configuration.hpp"
 
 #include "BASE_constants.hpp"
 
@@ -477,9 +481,10 @@ public:
                    std::max(ingress_spatial_traffic, egress_spatial_traffic) /
                        computation_delay);
       avg_noc_bw_req +=
-          (num_case_occurrences *
-           std::max(ingress_spatial_traffic, egress_spatial_traffic)) /
-          computation_delay;
+          (static_cast<long double>(num_case_occurrences) *
+           static_cast<long double>(
+               std::max(ingress_spatial_traffic, egress_spatial_traffic))) /
+          static_cast<long double>(computation_delay);
 
       delays[static_cast<int>(DelayType::Ingress)]
             [static_cast<int>(ValueType::Avg)] +=

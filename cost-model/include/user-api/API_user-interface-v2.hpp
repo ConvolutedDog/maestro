@@ -22,13 +22,11 @@ Author : Hyoukjun Kwon (hyoukjun@gatech.edu)
 #ifndef API_USER_INTERFACE_V2_HPP_
 #define API_USER_INTERFACE_V2_HPP_
 
-#include <algorithm>
 #include <iostream>
 #include <memory>
 #include <vector>
 
 #include "AHW_noc-model.hpp"
-#include "option.hpp"
 
 #include "BASE_base-objects.hpp"
 #include "BASE_maestro-class.hpp"

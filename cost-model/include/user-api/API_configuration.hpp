@@ -25,13 +25,8 @@ Author : Hyoukjun Kwon (hyoukjun@gatech.edu)
 #include <memory>
 #include <vector>
 
-// #include "option.hpp"
-
-#include "BASE_base-objects.hpp"
-
 #include "DFA_cluster-analysis.hpp"
 #include "DFA_neural-network.hpp"
-#include "DFA_tensor.hpp"
 
 #include "DSE_hardware_modules.hpp"
 

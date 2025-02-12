@@ -37,7 +37,6 @@ Author : Hyoukjun Kwon (hyoukjun@gatech.edu)
 #include "DFA_directives.hpp"
 #include "DFA_layer.hpp"
 #include "DFA_neural-network.hpp"
-#include "DFA_tensor.hpp"
 #include "DFSL_syntax_tokens.hpp"
 #include "DSE_design-options.hpp"
 

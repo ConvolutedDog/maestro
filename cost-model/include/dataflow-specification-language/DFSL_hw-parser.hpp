@@ -22,13 +22,11 @@ Author : Hyoukjun Kwon (hyoukjun@gatech.edu)
 #ifndef MAESTRO_DFSL_HW_PARSER_HPP_
 #define MAESTRO_DFSL_HW_PARSER_HPP_
 
+#include <climits>
 #include <cstdlib>
-#include <fstream>
 #include <iostream>
-#include <map>
 #include <memory>
 #include <string>
-#include <vector>
 
 #include <boost/format.hpp>
 #include <boost/tokenizer.hpp>

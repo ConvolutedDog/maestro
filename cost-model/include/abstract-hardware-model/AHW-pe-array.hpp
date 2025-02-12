@@ -19,7 +19,6 @@ SOFTWARE.
 Author : Hyoukjun Kwon (hyoukjun@gatech.edu)
 *******************************************************************************/
 
-
 #ifndef MAESTRO_AHW_PE_ARRAY_HPP_
 #define MAESTRO_AHW_PE_ARRAY_HPP_
 
@@ -29,28 +28,22 @@ Author : Hyoukjun Kwon (hyoukjun@gatech.edu)
 
 namespace maestro {
 
-	namespace AHW {
-		class ProcessingElementArray {
-			public:
-				ProcessingElementArray(int num_pes, std::shared_ptr<ProcessingElement> pe_model) :
-					num_pes_(num_pes), pe_model_(pe_model) {
+namespace AHW {
+class ProcessingElementArray {
+public:
+  ProcessingElementArray(int num_pes,
+                         std::shared_ptr<ProcessingElement> pe_model)
+      : num_pes_(num_pes), pe_model_(pe_model) {}
 
-				}
+  int GetNumPEs() { return num_pes_; }
 
-				int GetNumPEs () {
-					return num_pes_;
-				}
+  std::shared_ptr<ProcessingElement> GetPEModel() { return pe_model_; }
 
-				std::shared_ptr<ProcessingElement> GetPEModel() {
-					return pe_model_;
-				}
+protected:
+  int num_pes_;
+  std::shared_ptr<ProcessingElement> pe_model_;
+};
 
-			protected:
-				int num_pes_;
-				std::shared_ptr<ProcessingElement> pe_model_;
-
-		};
-
-	}; // End of namespace abstract_hw
+}; // namespace AHW
 }; // End of namespace maestro
 #endif

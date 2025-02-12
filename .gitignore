@@ -44,4 +44,11 @@ maestro
 # OSX file system
 .DS_Store
 
+# CMake temp files
+build
+
+# VSCode temp files
+.vscode
+
+# Python temp files
 *.pyc

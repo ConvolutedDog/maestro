@@ -19,44 +19,36 @@ SOFTWARE.
 Author : Hyoukjun Kwon (hyoukjun@gatech.edu)
 *******************************************************************************/
 
-
 #ifndef MAESTRO_AHW_PE_MODEL_HPP_
 #define MAESTRO_AHW_PE_MODEL_HPP_
 
 namespace maestro {
-	namespace AHW {
+namespace AHW {
 
-		enum class Precision {FP8, FP16, FP32, INT8, INT16, INT32};
+enum class Precision { FP8, FP16, FP32, INT8, INT16, INT32 };
 
-		class ProcessingElement {
-			public:
-				ProcessingElement(int l1_size, int vector_width, Precision mult_precision, Precision add_precision) :
-					l1_size_(l1_size), vector_width_(vector_width), mult_precision_(mult_precision), add_precision_(add_precision) {
-				}
+class ProcessingElement {
+public:
+  ProcessingElement(int l1_size, int vector_width, Precision mult_precision,
+                    Precision add_precision)
+      : l1_size_(l1_size), vector_width_(vector_width),
+        mult_precision_(mult_precision), add_precision_(add_precision) {}
 
-				int GetL1Size() {
-					return l1_size_;
-				}
+  int GetL1Size() { return l1_size_; }
 
-				int GetVectorWidth() {
-					return vector_width_;
-				}
+  int GetVectorWidth() { return vector_width_; }
 
-				Precision GetMultPrecision() {
-					return mult_precision_;
-				}
+  Precision GetMultPrecision() { return mult_precision_; }
 
-				Precision GetAddPrecision() {
-					return add_precision_;
-				}
+  Precision GetAddPrecision() { return add_precision_; }
 
-			protected:
-				int l1_size_;
-				int vector_width_;
-				Precision mult_precision_;
-				Precision add_precision_;
-		};
+protected:
+  int l1_size_;
+  int vector_width_;
+  Precision mult_precision_;
+  Precision add_precision_;
+};
 
-	}; // End of namespace abstract_hw
+}; // namespace AHW
 }; // End of namespace maestro
 #endif

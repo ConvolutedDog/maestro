@@ -46,9 +46,14 @@ maestro
 
 # CMake temp files
 build
+cmake-build-debug
 
 # VSCode temp files
 .vscode
 
 # Python temp files
 *.pyc
+
+# CLion temp files
+.idea
+

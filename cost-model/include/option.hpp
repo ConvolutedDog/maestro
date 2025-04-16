@@ -34,14 +34,23 @@ namespace po = boost::program_options;
 class Options {
 public:
   /* Default values : Models MAERI with VGG16 and 64 multiplier switches*/
+
+  /// the number of PEs
   int np = 7;
+  /// the bandwidth of NoC
   int bw = INT_MAX;
+  /// the average number of NoC hops
   int hops = 1;
+  /// the latency for each of NoC hop
   int hop_latency = 0;
+  /// the multicasting capability of NoC
   bool mc = true;
+  /// Only constraint top bandwidth
   bool top_bw_only = false;
+  /// Sweep the NoC bandwidth
   bool bw_sweep = false;
 
+  /// Use a large buffer to host all the data points
   bool full_buffer = false;
   std::list<std::string> in_tensors = {"weight", "input"};
   std::list<std::string> out_tensors = {"output"};
@@ -79,7 +88,6 @@ public:
   int offchip_bw = 70000;
 
   bool parse(int argc, char **argv) {
-    std::vector<std::string> config_fnames;
 
     po::options_description desc("General Options");
     desc.add_options()("help", "Display help message")(

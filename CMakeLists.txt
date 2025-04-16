@@ -4,6 +4,17 @@ project(maestro)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+option(MAESTRO_DEBUG "Enable debug mode (add debug symbols and disable optimizations)" ON)
+
+if(MAESTRO_DEBUG)
+    message(STATUS "Debug mode is ON")
+    add_compile_options(-g -O0)
+    add_definitions(-DDEBUG_MODE)
+else()
+    message(STATUS "Debug mode is OFF")
+    add_compile_options(-O3)
+endif()
+
 include_directories(
     .
     ./cost-model/include

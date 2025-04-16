@@ -51,7 +51,8 @@ int main(int argc, char **argv) {
    */
 
   if (option.bw_sweep && option.top_bw_only) {
-    int min_bw = option.bw_tick;
+    // bw_tick is the step of bandwidth search during the DSE.
+    // int min_bw = option.bw_tick;
 
     for (int bw = option.min_noc_bw; bw <= option.max_noc_bw;
          bw += option.bw_tick) {

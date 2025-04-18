@@ -176,7 +176,7 @@ public:
             state_ = ParserState::Network_Identifier;
           } else if (tkn == DFSL::constant_decl_) {
             state_ = ParserState::Constant_Name;
-          } else if (tkn == DFSL::accelerator_decl_) {
+          } else if (tkn == DFSL::accelerator_decl_) { // deprecated
             state_ = ParserState::Accelerator_Identifier;
           }
           break;
@@ -510,7 +510,7 @@ public:
               }
             }
 
-            if (map_size == -1) { // If not found
+            if (map_offset == -1) { // If not found
               std::cout << "[Error] Cannot find the dimension " << tkn
                         << "from dimension description" << std::endl;
               ParseError(line_number);
@@ -608,7 +608,7 @@ public:
               }
             }
 
-            if (map_size == -1) { // If not found
+            if (cluster_size == -1) { // If not found
               std::cout << "[Error] Cannot find the dimension " << tkn
                         << "from dimension description" << std::endl;
               ParseError(line_number);

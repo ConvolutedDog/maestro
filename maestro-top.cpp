@@ -36,15 +36,12 @@ Author : Hyoukjun Kwon (hyoukjun@gatech.edu)
 int main(int argc, char **argv) {
 
   maestro::Options option;
-  bool success = option.parse(argc, argv);
 
-  if (!success) {
+  if (!option.parse(argc, argv)) {
     FANCY_EXIT_WITH_MESSAGE(1, "[MAESTRO] Failed to parse program options");
   }
 
   maestro::InitializeBaseObjects(option.message_print_lv);
-
-  int num_pes = option.np;
 
   /*
    * Hard coded part; will Fix it
@@ -56,11 +53,11 @@ int main(int argc, char **argv) {
 
     for (int bw = option.min_noc_bw; bw <= option.max_noc_bw;
          bw += option.bw_tick) {
-      std::shared_ptr<std::vector<bool>> noc_multcast =
+      auto noc_multcast =
           std::make_shared<std::vector<bool>>();
-      std::shared_ptr<std::vector<int>> noc_latency =
+      auto noc_latency =
           std::make_shared<std::vector<int>>();
-      std::shared_ptr<std::vector<int>> noc_bw =
+      auto noc_bw =
           std::make_shared<std::vector<int>>();
 
       if (option.top_bw_only) {
@@ -95,11 +92,11 @@ int main(int argc, char **argv) {
       auto res = api->AnalyzeNeuralNetwork(option.print_res_to_screen, true);
     }
   } else {
-    std::shared_ptr<std::vector<bool>> noc_multcast =
+    auto noc_multcast =
         std::make_shared<std::vector<bool>>();
-    std::shared_ptr<std::vector<int>> noc_latency =
+    auto noc_latency =
         std::make_shared<std::vector<int>>();
-    std::shared_ptr<std::vector<int>> noc_bw =
+    auto noc_bw =
         std::make_shared<std::vector<int>>();
 
     // felix

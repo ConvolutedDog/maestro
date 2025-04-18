@@ -28,6 +28,8 @@ Author : Hyoukjun Kwon (hyoukjun@gatech.edu)
 #include "TL_error-handler.hpp"
 
 namespace maestro {
+/// Classes inherit from this class will have `instance_name_`, `error_handler_`
+/// and `message_printer_`.
 class MAESTROClass {
 public:
   MAESTROClass()
@@ -46,8 +48,13 @@ public:
   }
 
 protected:
+  /// Name of classes that inherit from base class `MAESTROClass`
   std::string instance_name_;
+  /// Provide function: `void PrintErrorMsg(ErrorCode error_code, std::string
+  /// opt, std::string instance_name = "")`
   std::shared_ptr<TL::ErrorHandler> error_handler_;
+  /// Provide function: `void PrintMsg(int lv, std::string msg, bool change_line
+  /// = true)`
   std::shared_ptr<TL::MessagePrinter> message_printer_;
 };
 }; // namespace maestro

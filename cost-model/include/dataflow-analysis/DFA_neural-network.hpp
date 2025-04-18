@@ -22,6 +22,7 @@ Author : Hyoukjun Kwon (hyoukjun@gatech.edu)
 #ifndef MAESTRO_DFA_NEURAL_NETWORK_HPP_
 #define MAESTRO_DFA_NEURAL_NETWORK_HPP_
 
+#include <iostream>
 #include <memory>
 #include <string>
 #include <vector>
